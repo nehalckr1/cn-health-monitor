@@ -1,0 +1,9 @@
+{
+  "cpu": 85,
+  "mem": 90,
+  "interval": 1,
+  "down_after": 3,
+  "stats_port": 5005,
+  "alert_port": 5006,
+  "log_file": "monitor.log"
+}
