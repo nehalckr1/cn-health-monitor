@@ -8,7 +8,9 @@ so the UDP receive loop is never blocked.
 import json
 import os
 import queue
+import csv
 import select
+import signal
 import socket
 import sys
 import threading
@@ -25,6 +27,10 @@ CFG.setdefault("controller_enabled", True)
 CFG.setdefault("controller_url", "http://10.0.0.254:8080")
 CFG.setdefault("controller_timeout", 2.0)
 CFG.setdefault("alert_post_interval", 5)  # seconds between /alert calls per node
+# files for Member C (results) and the dashboard
+CFG.setdefault("metrics_csv", "metrics_events.csv")   # one row per event
+CFG.setdefault("summary_csv", "metrics_summary.csv")  # one row per node
+CFG.setdefault("status_file", "/tmp/monitor_status.json")  # read by dashboard.py
 
 REQUIRED = {"type": str, "node_id": str, "seq": int, "timestamp": (int, float)}
 STATS_FIELDS = ("cpu", "mem", "procs", "net_rx", "net_tx")
@@ -33,6 +39,21 @@ nodes = {}
 lock = threading.Lock()
 post_q = queue.Queue(maxsize=1000)
 log_f = open(CFG.get("log_file", "monitor.log"), "a", buffering=1)
+
+# ------------------------------------------------------------- metrics (CSV)
+csv_lock = threading.Lock()
+_new_csv = not os.path.exists(CFG["metrics_csv"])
+csv_f = open(CFG["metrics_csv"], "a", newline="", buffering=1)
+csv_w = csv.writer(csv_f)
+if _new_csv:
+    csv_w.writerow(["epoch_time", "event", "node_id", "value", "detail"])
+
+
+def metric(event, node_id, value="", detail=""):
+    """event: ALERT (value=latency_ms), NODE_DOWN (value=silent_seconds),
+    NODE_UP, LOSS (value=missing packets), DUP, MALFORMED."""
+    with csv_lock:
+        csv_w.writerow([f"{time.time():.3f}", event, node_id, value, detail])
 
 
 def log(line):
@@ -52,7 +73,8 @@ def make_sock(port):
 def new_node(node_id):
     return {"last_seen": 0.0, "last_seq": 0, "last_alert_seq": 0, "lost": 0,
             "dups": 0, "received": 0, "status": "UP", "values": {}, "ip": "",
-            "last_threshold": 0.0, "last_alert_post": 0.0}
+            "last_threshold": 0.0, "last_alert_post": 0.0,
+            "alerts": 0, "lat_sum": 0.0, "lat_n": 0, "lat_max": 0.0}
 
 
 # ---------------------------------------------------------------- controller
@@ -106,10 +128,12 @@ def handle(data, addr, recv_time):
         msg = json.loads(data.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError):
         log(f"MALFORMED from {addr[0]}: not valid JSON")
+        metric("MALFORMED", addr[0], "", "not valid JSON")
         return
     err = validate(msg)
     if err:
         log(f"MALFORMED from {addr[0]}: {err}")
+        metric("MALFORMED", addr[0], "", err)
         return
 
     nid, typ, seq = msg["node_id"], msg["type"], msg["seq"]
@@ -122,16 +146,19 @@ def handle(data, addr, recv_time):
         if seq <= n[seq_key] and not restarted:
             n["dups"] += 1
             log(f"DUP/OUT-OF-ORDER node={nid} type={typ} seq={seq} last={n[seq_key]}")
+            metric("DUP", nid, 1, typ)
             return
         if typ != "ALERT" and n[seq_key] and seq > n[seq_key] + 1 and not restarted:
             gap = seq - n[seq_key] - 1
             n["lost"] += gap
             log(f"LOSS node={nid} missing={gap} (seq {n[seq_key] + 1}..{seq - 1})")
+            metric("LOSS", nid, gap, f"seq {n[seq_key] + 1}..{seq - 1}")
         n[seq_key] = seq
 
         if n["status"] == "DOWN":
             n["status"] = "UP"
             log(f"NODE_UP node={nid}")
+            metric("NODE_UP", nid)
             post_controller("/node_up", {"node_id": nid, "ip": n["ip"]})
 
         n["last_seen"] = recv_time
@@ -140,8 +167,15 @@ def handle(data, addr, recv_time):
         if typ in ("STATS", "ALERT"):
             n["values"] = {k: msg[k] for k in STATS_FIELDS}
 
+        latency_ms = (recv_time - msg["timestamp"]) * 1000
+        if typ == "STATS":
+            n["lat_sum"] += latency_ms
+            n["lat_n"] += 1
+            n["lat_max"] = max(n["lat_max"], latency_ms)
+
         if typ == "ALERT":
-            latency_ms = (recv_time - msg["timestamp"]) * 1000
+            n["alerts"] += 1
+            metric("ALERT", nid, f"{latency_ms:.3f}", msg.get("reason", ""))
             sev = msg.get("severity", "?")
             log(f"ALERT node={nid} sev={sev} "
                 f"reason={msg.get('reason', '?')} latency_ms={latency_ms:.2f}")
@@ -169,10 +203,77 @@ def down_checker():
                 if n["status"] == "UP" and now - n["last_seen"] > limit:
                     n["status"] = "DOWN"
                     log(f"NODE_DOWN node={nid} silent_for={now - n['last_seen']:.1f}s")
+                    metric("NODE_DOWN", nid, f"{now - n['last_seen']:.2f}",
+                           f"last_seen={n['last_seen']:.3f}")
                     post_controller("/node_down", {"node_id": nid, "ip": n["ip"]})
 
 
+def snapshot():
+    """Per-node numbers, used for the dashboard and the summary CSV."""
+    now = time.time()
+    rows = {}
+    with lock:
+        for nid, n in nodes.items():
+            tot = n["received"] + n["lost"]
+            rows[nid] = {
+                "status": n["status"], "ip": n["ip"],
+                "cpu": n["values"].get("cpu", 0), "mem": n["values"].get("mem", 0),
+                "received": n["received"], "lost": n["lost"], "dups": n["dups"],
+                "loss_pct": round(100.0 * n["lost"] / tot, 2) if tot else 0.0,
+                "alerts": n["alerts"],
+                "avg_lat_ms": round(n["lat_sum"] / n["lat_n"], 3) if n["lat_n"] else 0.0,
+                "max_lat_ms": round(n["lat_max"], 3),
+                "age": round(now - n["last_seen"], 1) if n["last_seen"] else -1,
+            }
+    return now, rows
+
+
+def write_status():
+    now, rows = snapshot()
+    tmp = CFG["status_file"] + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump({"updated": now, "nodes": rows}, f)
+    os.replace(tmp, CFG["status_file"])
+    return rows
+
+
+def write_summary(rows):
+    tmp = CFG["summary_csv"] + ".tmp"
+    with open(tmp, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["node_id", "status", "received", "lost", "loss_pct", "dups",
+                    "alerts", "avg_stats_latency_ms", "max_stats_latency_ms"])
+        for nid in sorted(rows):
+            r = rows[nid]
+            w.writerow([nid, r["status"], r["received"], r["lost"], r["loss_pct"],
+                        r["dups"], r["alerts"], r["avg_lat_ms"], r["max_lat_ms"]])
+    os.replace(tmp, CFG["summary_csv"])
+
+
+def status_writer():
+    i = 0
+    while True:
+        try:
+            rows = write_status()
+            if i % 5 == 0:
+                write_summary(rows)
+        except Exception as e:
+            log(f"STATUS WRITE FAILED: {e}")
+        i += 1
+        time.sleep(1)
+
+
+def shutdown(*_):
+    try:
+        write_summary(write_status())
+    finally:
+        log("monitor stopped, summary written")
+        os._exit(0)
+
+
 def main():
+    signal.signal(signal.SIGTERM, shutdown)
+    threading.Thread(target=status_writer, daemon=True).start()
     s_stats = make_sock(CFG["stats_port"])
     s_alert = make_sock(CFG["alert_port"])
     threading.Thread(target=down_checker, daemon=True).start()
@@ -184,7 +285,7 @@ def main():
         try:
             ready, _, _ = select.select([s_stats, s_alert], [], [], 1.0)
         except KeyboardInterrupt:
-            break
+            shutdown()
         for s in ready:
             try:
                 data, addr = s.recvfrom(4096)
@@ -200,4 +301,4 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        pass
+        shutdown()
