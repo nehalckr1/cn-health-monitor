@@ -1,0 +1,6 @@
+node_id,status,received,lost,loss_pct,dups,alerts,avg_stats_latency_ms,max_stats_latency_ms
+h1,UP,119,0,0.0,0,0,2.543,14.071
+h2,DOWN,85,0,0.0,0,0,2.338,12.19
+h3,UP,119,0,0.0,0,119,2.673,37.7
+h4,UP,120,0,0.0,0,0,2.375,13.473
+h5,UP,119,0,0.0,0,0,2.185,37.553
