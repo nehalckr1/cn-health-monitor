@@ -1,0 +1,2 @@
+11:57:23 NODE_DOWN node=h1 silent_for=3.5s
+11:57:23 CONTROLLER POST /node_down node=h1 -> 200 in 1.2 ms
