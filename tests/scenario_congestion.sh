@@ -5,6 +5,7 @@ LABEL=${1:-dynamic}; RUN=${2:-1}
 D2="$REPO/results/d2"; mkdir -p "$D2"
 OUT="$D2/congestion.csv"
 [ -f "$OUT" ] || echo "label,run,alerts,avg_ms,p95_ms,max_ms,down_events" > "$OUT"
+set_mode "$LABEL"
 sudo pkill -f "agent.py --id"; sudo pkill -f iperf; sleep 1
 hrun bg2 iperf -s -u >/dev/null 2>&1 &
 sleep 1

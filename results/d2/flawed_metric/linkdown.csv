@@ -1,0 +1,7 @@
+label,run,lost_packets,outage_s,node_down_events,recovered_before_restore
+dynamic,1,1,0.0,0,yes
+dynamic,2,0,0.0,0,yes
+dynamic,3,0,0.0,0,yes
+baseline,1,0,0.0,1,yes
+baseline,2,0,0.0,1,yes
+baseline,3,0,0.0,1,yes
