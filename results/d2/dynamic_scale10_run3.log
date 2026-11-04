@@ -1,0 +1,370 @@
+12:05:39 NODE_UP node=s7
+12:05:39 THRESHOLD node=s7 cpu=95.0 mem=53.4
+12:05:39 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.68
+12:05:39 NODE_UP node=s3
+12:05:39 THRESHOLD node=s3 cpu=95.0 mem=31.7
+12:05:39 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.56
+12:05:39 NODE_UP node=s2
+12:05:39 THRESHOLD node=s2 cpu=95.0 mem=32.3
+12:05:39 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.51
+12:05:39 NODE_UP node=s8
+12:05:39 THRESHOLD node=s8 cpu=95.0 mem=54.1
+12:05:39 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.34
+12:05:39 NODE_UP node=s4
+12:05:39 THRESHOLD node=s4 cpu=95.0 mem=37.8
+12:05:39 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.45
+12:05:39 CONTROLLER POST /node_up node=s7 -> 200 in 5.3 ms
+12:05:39 CONTROLLER POST /alert node=s7 -> 200 in 6.6 ms
+12:05:39 CONTROLLER POST /node_up node=s3 -> 200 in 7.1 ms
+12:05:39 CONTROLLER POST /alert node=s3 -> 200 in 10.6 ms
+12:05:39 CONTROLLER POST /node_up node=s2 -> 200 in 11.6 ms
+12:05:39 NODE_UP node=s9
+12:05:39 THRESHOLD node=s9 cpu=95.0 mem=36.0
+12:05:39 CONTROLLER POST /alert node=s2 -> 200 in 13.3 ms
+12:05:39 CONTROLLER POST /node_up node=s8 -> 200 in 13.8 ms
+12:05:39 NODE_UP node=s5
+12:05:39 THRESHOLD node=s5 cpu=95.0 mem=38.8
+12:05:39 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:05:39 CONTROLLER POST /alert node=s8 -> 200 in 15.3 ms
+12:05:39 NODE_UP node=s1
+12:05:39 THRESHOLD node=s1 cpu=95.0 mem=45.1
+12:05:39 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:39 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.21
+12:05:39 CONTROLLER POST /node_up node=s4 -> 200 in 12.9 ms
+12:05:39 NODE_UP node=s10
+12:05:39 THRESHOLD node=s10 cpu=95.0 mem=44.8
+12:05:39 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.01
+12:05:39 CONTROLLER POST /alert node=s4 -> 200 in 13.3 ms
+12:05:39 NODE_UP node=s6
+12:05:39 THRESHOLD node=s6 cpu=95.0 mem=39.1
+12:05:39 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:39 CONTROLLER POST /node_up node=s9 -> 200 in 5.0 ms
+12:05:39 CONTROLLER POST /node_up node=s5 -> 200 in 3.9 ms
+12:05:39 CONTROLLER POST /alert node=s5 -> 200 in 3.6 ms
+12:05:39 CONTROLLER POST /node_up node=s1 -> 200 in 3.8 ms
+12:05:39 CONTROLLER POST /alert node=s1 -> 200 in 4.1 ms
+12:05:39 CONTROLLER POST /alert node=s9 -> 200 in 3.7 ms
+12:05:39 CONTROLLER POST /node_up node=s10 -> 200 in 3.6 ms
+12:05:39 CONTROLLER POST /alert node=s10 -> 200 in 4.4 ms
+12:05:39 CONTROLLER POST /node_up node=s6 -> 200 in 4.2 ms
+12:05:39 CONTROLLER POST /alert node=s6 -> 200 in 4.8 ms
+12:05:40 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.16
+12:05:40 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:40 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.33
+12:05:40 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:40 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:40 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.19
+12:05:40 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:40 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:40 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:40 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.28
+12:05:41 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.13
+12:05:41 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.29
+12:05:41 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.40
+12:05:41 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.26
+12:05:41 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:41 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:41 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.11
+12:05:41 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:41 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:41 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:42 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.24
+12:05:42 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.18
+12:05:42 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.10
+12:05:42 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:42 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:42 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:42 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:42 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:42 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:42 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:43 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.51
+12:05:43 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.61
+12:05:43 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.29
+12:05:43 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.30
+12:05:43 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:43 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:43 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.37
+12:05:43 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:43 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:43 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:44 THRESHOLD node=s3 cpu=95.0 mem=34.3
+12:05:44 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.56
+12:05:44 THRESHOLD node=s8 cpu=95.0 mem=52.7
+12:05:44 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.46
+12:05:44 THRESHOLD node=s2 cpu=95.0 mem=29.6
+12:05:44 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.89
+12:05:44 THRESHOLD node=s7 cpu=95.0 mem=54.1
+12:05:44 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.90
+12:05:44 THRESHOLD node=s4 cpu=95.0 mem=32.7
+12:05:44 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.27
+12:05:44 CONTROLLER POST /alert node=s3 -> 200 in 2.6 ms
+12:05:44 CONTROLLER POST /alert node=s8 -> 200 in 3.9 ms
+12:05:44 CONTROLLER POST /alert node=s2 -> 200 in 4.2 ms
+12:05:44 CONTROLLER POST /alert node=s7 -> 200 in 5.0 ms
+12:05:44 CONTROLLER POST /alert node=s4 -> 200 in 4.0 ms
+12:05:44 THRESHOLD node=s1 cpu=95.0 mem=41.0
+12:05:44 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.37
+12:05:44 THRESHOLD node=s5 cpu=95.0 mem=42.8
+12:05:44 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.41
+12:05:44 THRESHOLD node=s9 cpu=95.0 mem=41.7
+12:05:44 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.14
+12:05:44 THRESHOLD node=s10 cpu=95.0 mem=39.0
+12:05:44 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:44 THRESHOLD node=s6 cpu=95.0 mem=38.3
+12:05:44 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:44 CONTROLLER POST /alert node=s5 -> 200 in 1.0 ms
+12:05:44 CONTROLLER POST /alert node=s1 -> 200 in 1.6 ms
+12:05:44 CONTROLLER POST /alert node=s9 -> 200 in 2.1 ms
+12:05:44 CONTROLLER POST /alert node=s10 -> 200 in 2.4 ms
+12:05:44 CONTROLLER POST /alert node=s6 -> 200 in 2.3 ms
+12:05:45 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.50
+12:05:45 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.58
+12:05:45 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.31
+12:05:45 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.26
+12:05:45 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:45 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:45 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:45 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.22
+12:05:45 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.16
+12:05:45 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.12
+12:05:46 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:46 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:46 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:46 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:46 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:46 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:46 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:46 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:46 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:46 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:47 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.56
+12:05:47 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.66
+12:05:47 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.32
+12:05:47 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.29
+12:05:47 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:47 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:47 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:47 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:47 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:47 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:48 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.08
+12:05:48 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.17
+12:05:48 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.76
+12:05:48 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.75
+12:05:48 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.35
+12:05:48 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.11
+12:05:48 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:48 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.13
+12:05:48 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:48 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:49 THRESHOLD node=s7 cpu=95.0 mem=53.8
+12:05:49 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.85
+12:05:49 THRESHOLD node=s3 cpu=95.0 mem=37.4
+12:05:49 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.00
+12:05:49 THRESHOLD node=s8 cpu=95.0 mem=56.4
+12:05:49 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.88
+12:05:49 THRESHOLD node=s4 cpu=95.0 mem=33.0
+12:05:49 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.70
+12:05:49 THRESHOLD node=s2 cpu=95.0 mem=28.4
+12:05:49 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.60
+12:05:49 CONTROLLER POST /alert node=s7 -> 200 in 1.7 ms
+12:05:49 CONTROLLER POST /alert node=s3 -> 200 in 2.4 ms
+12:05:49 CONTROLLER POST /alert node=s8 -> 200 in 3.4 ms
+12:05:49 CONTROLLER POST /alert node=s4 -> 200 in 3.9 ms
+12:05:49 CONTROLLER POST /alert node=s2 -> 200 in 4.3 ms
+12:05:49 THRESHOLD node=s1 cpu=95.0 mem=41.8
+12:05:49 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:49 THRESHOLD node=s9 cpu=95.0 mem=39.5
+12:05:49 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:49 CONTROLLER POST /alert node=s1 -> 200 in 1.1 ms
+12:05:49 THRESHOLD node=s10 cpu=95.0 mem=39.2
+12:05:49 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.42
+12:05:49 THRESHOLD node=s5 cpu=95.0 mem=39.3
+12:05:49 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:49 THRESHOLD node=s6 cpu=95.0 mem=36.3
+12:05:49 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:05:49 CONTROLLER POST /alert node=s9 -> 200 in 1.6 ms
+12:05:49 CONTROLLER POST /alert node=s10 -> 200 in 1.2 ms
+12:05:49 CONTROLLER POST /alert node=s5 -> 200 in 1.7 ms
+12:05:49 CONTROLLER POST /alert node=s6 -> 200 in 1.8 ms
+12:05:50 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:50 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:50 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:50 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:50 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:50 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:50 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:50 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:50 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:05:50 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:51 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.57
+12:05:51 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.23
+12:05:51 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.21
+12:05:51 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:51 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:51 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.26
+12:05:51 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:51 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.45
+12:05:51 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.24
+12:05:51 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.14
+12:05:52 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:52 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:52 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.11
+12:05:52 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:52 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:52 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.40
+12:05:52 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.13
+12:05:52 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:52 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:52 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:53 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.61
+12:05:53 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.56
+12:05:53 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.29
+12:05:53 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.19
+12:05:53 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:53 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:53 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.12
+12:05:53 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.11
+12:05:53 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:53 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:54 THRESHOLD node=s7 cpu=95.0 mem=53.4
+12:05:54 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.43
+12:05:54 THRESHOLD node=s2 cpu=95.0 mem=30.2
+12:05:54 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.17
+12:05:54 THRESHOLD node=s4 cpu=95.0 mem=34.7
+12:05:54 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=1.13
+12:05:54 THRESHOLD node=s8 cpu=95.0 mem=53.7
+12:05:54 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.69
+12:05:54 THRESHOLD node=s3 cpu=95.0 mem=32.8
+12:05:54 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.46
+12:05:54 CONTROLLER POST /alert node=s7 -> 200 in 2.0 ms
+12:05:54 CONTROLLER POST /alert node=s2 -> 200 in 3.0 ms
+12:05:54 CONTROLLER POST /alert node=s4 -> 200 in 3.7 ms
+12:05:54 CONTROLLER POST /alert node=s8 -> 200 in 4.7 ms
+12:05:54 CONTROLLER POST /alert node=s3 -> 200 in 5.2 ms
+12:05:54 THRESHOLD node=s9 cpu=95.0 mem=38.5
+12:05:54 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:54 THRESHOLD node=s1 cpu=95.0 mem=44.1
+12:05:54 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:54 THRESHOLD node=s10 cpu=95.0 mem=43.9
+12:05:54 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:54 CONTROLLER POST /alert node=s9 -> 200 in 1.2 ms
+12:05:54 THRESHOLD node=s5 cpu=95.0 mem=40.4
+12:05:54 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.28
+12:05:54 THRESHOLD node=s6 cpu=95.0 mem=37.7
+12:05:54 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.28
+12:05:54 CONTROLLER POST /alert node=s1 -> 200 in 2.4 ms
+12:05:54 CONTROLLER POST /alert node=s10 -> 200 in 2.4 ms
+12:05:54 CONTROLLER POST /alert node=s5 -> 200 in 2.2 ms
+12:05:54 CONTROLLER POST /alert node=s6 -> 200 in 2.7 ms
+12:05:55 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.43
+12:05:55 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.47
+12:05:55 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.16
+12:05:55 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:05:55 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:55 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.35
+12:05:55 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.36
+12:05:55 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:55 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:55 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:56 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.76
+12:05:56 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.75
+12:05:56 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.42
+12:05:56 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.45
+12:05:56 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.18
+12:05:56 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:05:56 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:56 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:56 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:56 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:57 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.11
+12:05:57 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:57 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:57 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:57 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:05:57 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:57 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:57 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:57 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:57 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:05:58 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.12
+12:05:58 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.38
+12:05:58 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.16
+12:05:58 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.14
+12:05:58 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.10
+12:05:58 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:58 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:05:58 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.17
+12:05:58 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:05:58 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:05:59 THRESHOLD node=s7 cpu=95.0 mem=51.6
+12:05:59 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.62
+12:05:59 THRESHOLD node=s4 cpu=95.0 mem=33.3
+12:05:59 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.52
+12:05:59 THRESHOLD node=s3 cpu=95.0 mem=32.7
+12:05:59 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.85
+12:05:59 THRESHOLD node=s8 cpu=95.0 mem=52.7
+12:05:59 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.84
+12:05:59 THRESHOLD node=s2 cpu=95.0 mem=28.4
+12:05:59 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.73
+12:05:59 CONTROLLER POST /alert node=s7 -> 200 in 1.8 ms
+12:05:59 CONTROLLER POST /alert node=s3 -> 200 in 2.3 ms
+12:05:59 CONTROLLER POST /alert node=s4 -> 200 in 2.6 ms
+12:05:59 CONTROLLER POST /alert node=s8 -> 200 in 3.1 ms
+12:05:59 CONTROLLER POST /alert node=s2 -> 200 in 3.4 ms
+12:05:59 THRESHOLD node=s9 cpu=95.0 mem=36.1
+12:05:59 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:05:59 THRESHOLD node=s1 cpu=95.0 mem=43.3
+12:05:59 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:05:59 CONTROLLER POST /alert node=s9 -> 200 in 0.6 ms
+12:05:59 CONTROLLER POST /alert node=s1 -> 200 in 1.1 ms
+12:05:59 THRESHOLD node=s10 cpu=95.0 mem=39.0
+12:05:59 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.47
+12:05:59 THRESHOLD node=s6 cpu=95.0 mem=37.8
+12:05:59 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.33
+12:05:59 THRESHOLD node=s5 cpu=95.0 mem=38.2
+12:05:59 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.12
+12:05:59 CONTROLLER POST /alert node=s10 -> 200 in 0.7 ms
+12:05:59 CONTROLLER POST /alert node=s6 -> 200 in 1.1 ms
+12:05:59 CONTROLLER POST /alert node=s5 -> 200 in 1.2 ms
+12:06:00 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.18
+12:06:00 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.26
+12:06:00 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:00 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:00 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:01 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:06:01 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.15
+12:06:01 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:06:01 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:01 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:06:01 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:01 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:06:01 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:01 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:06:01 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:06:02 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.12
+12:06:02 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.09
+12:06:02 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:06:02 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.02
+12:06:02 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:06:02 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:02 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.04
+12:06:02 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:02 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.18
+12:06:02 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.03
+12:06:03 ALERT node=s7 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.50
+12:06:03 ALERT node=s2 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.34
+12:06:03 ALERT node=s4 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.23
+12:06:03 ALERT node=s8 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.25
+12:06:03 ALERT node=s3 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.08
+12:06:03 ALERT node=s9 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.06
+12:06:03 ALERT node=s1 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:03 ALERT node=s10 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.07
+12:06:03 ALERT node=s6 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
+12:06:03 ALERT node=s5 sev=CRITICAL reason=cpu 95.0 > 85 latency_ms=0.05
